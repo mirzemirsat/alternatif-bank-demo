@@ -1,4 +1,4 @@
-# Digital Banking | Account & Transfer Demo
+# Alternatif Bank Demo
 
 Örnek hesaplar üzerinden bakiye görüntüleme ve para transferi akışını gösteren bankacılık arayüzü demosu.
 
@@ -16,8 +16,8 @@ Next.js **13.5.1**, React 18, TypeScript, Tailwind CSS ve shadcn/ui. Sürüm bil
 ## Yerel çalıştırma
 
 ```bash
-git clone https://github.com/mirzemirsat/DENEMEEE.git
-cd DENEMEEE
+git clone https://github.com/mirzemirsat/alternatif-bank-demo.git
+cd alternatif-bank-demo
 npm ci
 npm run dev
 ```
@@ -34,4 +34,4 @@ Alternatif Bank görsel referansları bir demo tasarımının parçasıdır; res
 
 `app/` sayfaları, `components/` arayüz bileşenlerini, `lib/` mock API ve veri modellerini içerir.
 
-İlişkili, farklı iş akışları içeren demo: [onyuz](https://github.com/mirzemirsat/onyuz).
+İlişkili, farklı iş akışları içeren demo: [onyuz](https://github.com/mirzemirsat/alternatif-bank-credit-demo).
