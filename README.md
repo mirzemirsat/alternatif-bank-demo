@@ -1,144 +1,37 @@
-# Alternatif Bank Demo - Frontend
+# Digital Banking | Account & Transfer Demo
 
-Bu proje Alternatif Bank deneyimini yerel ortamda taklit eden bir demo uygulamasıdır.
+Örnek hesaplar üzerinden bakiye görüntüleme ve para transferi akışını gösteren bankacılık arayüzü demosu.
 
 ## Özellikler
 
-- **Hesap Listesi**: Tüm hesapları görüntüleme ve arama
-- **Hesap Detayı**: Bakiye ve son 20 işlemi görüntüleme
-- **Para Transferi**: IBAN doğrulamalı transfer formu
-- **Transfer Listesi**: Sayfalama ile tüm transferleri görüntüleme
-- **Responsive Tasarım**: Mobil ve masaüstü uyumlu
-- **Mock Data**: Backend olmadan çalışır
-
-## Kurulum
-
-```bash
-# Bağımlılıkları yükle
-npm install
-
-# Geliştirme sunucusunu başlat
-npm run dev
-```
-
-Uygulama http://localhost:3000 adresinde çalışacaktır.
-
-## Production Build
-
-```bash
-npm run build
-npm run start
-```
+- Hesap listesi, isim/IBAN araması ve hesap detayı.
+- Hesap hareketleri ve sayfalı transfer geçmişi.
+- Gönderen/alıcı ve bakiye kontrolleri bulunan transfer akışı.
+- Türk lirası ve Türkçe tarih biçimlendirmesi.
 
 ## Teknolojiler
 
-- **Next.js 14** - App Router
-- **React 18** - UI framework
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Styling
-- **shadcn/ui** - UI bileşenleri
-- **Lucide React** - İkonlar
+Next.js **13.5.1**, React 18, TypeScript, Tailwind CSS ve shadcn/ui. Sürüm bilgisi `package.json` ile eşleştirilmiştir.
 
-## Proje Yapısı
+## Yerel çalıştırma
 
-```
-.
-├── app/
-│   ├── accounts/[iban]/    # Hesap detay sayfası
-│   ├── transfer/           # Transfer formu
-│   ├── transfers/          # Transfer listesi
-│   ├── globals.css         # Global stiller
-│   ├── layout.tsx          # Root layout
-│   └── page.tsx            # Ana sayfa (hesaplar)
-├── components/
-│   ├── ui/                 # shadcn/ui bileşenleri
-│   └── header.tsx          # Header component
-├── lib/
-│   ├── api.ts              # API client (mock)
-│   ├── mock-data.ts        # Mock veriler
-│   └── utils.ts            # Yardımcı fonksiyonlar
-└── public/                 # Static dosyalar
+```bash
+git clone https://github.com/mirzemirsat/DENEMEEE.git
+cd DENEMEEE
+npm ci
+npm run dev
 ```
 
-## Özellikler
+Varsayılan adres `http://localhost:3000`. Kontroller: `npm run typecheck`, `npm run lint`; derleme: `npm run build`, ardından `npm start`.
 
-### 1. Hesap Listesi (/)
-- Tüm hesapları listeler
-- İsim veya IBAN ile arama
-- Her hesap için:
-  - Ad soyad
-  - IBAN
-  - Bakiye
-  - Açılış tarihi
-  - Para gönder butonu
-  - Detay butonu
+## Demo kapsamı
 
-### 2. Hesap Detayı (/accounts/[iban])
-- Hesap bilgileri
-- Mevcut bakiye
-- Son 20 işlem
-- Gelen/giden transfer ayrımı
-- Her işlem için:
-  - Tutar
-  - Karşı taraf bilgileri
-  - Tarih
+`lib/api.ts`, `lib/mock-data.ts` içindeki örnek kayıtlarla çalışır. Gerçek banka API'si veya gerçek para hareketi yoktur. İstemci içindeki demo verileri kalıcı bankacılık kaydı sayılmaz. IBAN alanı kontrolleri banka entegrasyonu veya hesap sahipliği doğrulaması sağlamaz.
 
-### 3. Para Transferi (/transfer)
-- IBAN formatı kontrolü (TR + 24 rakam)
-- Tutar doğrulama
-- Aynı hesap kontrolü
-- Bakiye kontrolü
-- Başarı/hata mesajları
-- Form validasyonu
+Alternatif Bank görsel referansları bir demo tasarımının parçasıdır; resmi banka ürünü veya kurum onayı iddiası yoktur.
 
-### 4. Transfer Listesi (/transfers)
-- Tüm transferleri listeler
-- Sayfalama (20 kayıt/sayfa)
-- Her transfer için:
-  - Transfer ID
-  - Gönderen/Alıcı bilgileri
-  - Tutar
-  - Tarih
+## Kaynak yapısı
 
-## Mock Data
+`app/` sayfaları, `components/` arayüz bileşenlerini, `lib/` mock API ve veri modellerini içerir.
 
-Uygulama 5 örnek hesap ve 10 örnek transfer ile başlar:
-
-### Hesaplar
-1. Ahmet Yılmaz - 15,750.50 TL
-2. Ayşe Demir - 8,240.25 TL
-3. Mehmet Öz - 25,600.00 TL
-4. Fatma Kaya - 3,420.75 TL
-5. Ali Çelik - 12,890.00 TL
-
-Yeni transferler yapıldığında:
-- Bakiyeler otomatik güncellenir
-- Transfer listesine eklenir
-- Hesap detaylarında görünür
-
-## Tema ve Renkler
-
-Alternatif Bank marka renkleri:
-- **Primary**: #ad2460 (koyu pembe/bordo)
-- **Background**: #ffffff (beyaz)
-- Tüm butonlar, linkler ve vurgular primary renkte
-
-## Validasyonlar
-
-### IBAN
-- Format: TR + 24 rakam
-- Toplam 26 karakter
-- Sadece büyük harf ve rakam
-
-### Transfer Tutarı
-- 0'dan büyük olmalı
-- Maksimum 2 ondalık basamak
-- Gönderen hesapta yeterli bakiye olmalı
-
-### Diğer Kurallar
-- Gönderen ve alıcı IBAN farklı olmalı
-- Her iki hesap da sistemde kayıtlı olmalı
-
-## Lisans
-
-Bu proje demo amaçlıdır ve Alternatif Bank deneyimini taklit eder.
+İlişkili, farklı iş akışları içeren demo: [onyuz](https://github.com/mirzemirsat/onyuz).
