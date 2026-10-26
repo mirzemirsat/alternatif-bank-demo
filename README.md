@@ -34,4 +34,4 @@ Alternatif Bank görsel referansları bir demo tasarımının parçasıdır; res
 
 `app/` sayfaları, `components/` arayüz bileşenlerini, `lib/` mock API ve veri modellerini içerir.
 
-İlişkili, farklı iş akışları içeren demo: [onyuz](https://github.com/mirzemirsat/alternatif-bank-credit-demo).
+İlişkili, farklı iş akışları içeren demo: [Alternatif Bank Kredi Demo](https://github.com/mirzemirsat/alternatif-bank-credit-demo).
